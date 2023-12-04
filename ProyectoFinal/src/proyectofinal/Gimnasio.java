@@ -5,9 +5,15 @@
 package proyectofinal;
 
 /**
- *
- * @author DURAN
- */
+ * Autores:
+  
+ * Anferny Sanabria
+ * Byron Zumbado
+ * Esteban Picado
+ * Jorge Durán
+ 
+ **/
+
 public class Gimnasio {
     // Atributos
     private Empleado[] vectorEmpleados;

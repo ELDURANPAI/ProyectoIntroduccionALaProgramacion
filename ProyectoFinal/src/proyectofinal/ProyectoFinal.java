@@ -1,5 +1,6 @@
 package proyectofinal;
 
+//Importar librerias necesarias:
 import java.awt.Color;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
@@ -21,9 +22,15 @@ import javax.swing.SwingUtilities;
 import javax.swing.table.DefaultTableModel;
 
 /**
- *
- * @author AnfernySG
- */
+ * Autores:
+  
+ * Anferny Sanabria
+ * Byron Zumbado
+ * Esteban Picado
+ * Jorge Durán
+ 
+ **/
+
 public class ProyectoFinal extends JFrame {
     // Atributos
     private int dimesionDefecto = 100;
@@ -40,7 +47,7 @@ public class ProyectoFinal extends JFrame {
     // Constructor
     public ProyectoFinal() {
         // Configuracion basica de la ventana
-        super("Control de actividades");
+        super("Centro de Control");
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setSize(900, 600);
         // Hace que la pantalla no se puede redimensionar
@@ -52,8 +59,8 @@ public class ProyectoFinal extends JFrame {
         inicializarComponentesVisuales();
         this.setVisible(true);
     }
-    
-    // Inicializa los atributos
+   
+    // Inicializa los atributos - creacion de empleados
     public void inicializarAtributos() {
         // Se crean empleados iniciales
         Empleado empleado1 = new Empleado("1", "Anferny Sanabria");
@@ -61,12 +68,58 @@ public class ProyectoFinal extends JFrame {
         Empleado empleado3 = new Empleado("3", "Juan Arias");
         Empleado empleado4 = new Empleado("4", "Carlos Rodriguez");
         Empleado empleado5 = new Empleado("5", "Sergio Campos");
+        Empleado empleado6 = new Empleado("6", "Anthuan Cortes");
+        Empleado empleado7 = new Empleado("7", "Fabian Torres");
+        Empleado empleado8 = new Empleado("8", "Daniel Cespedes");
+        Empleado empleado9 = new Empleado("9", "Johan Moya");
+        Empleado empleado10 = new Empleado("10", "Jorge Duran");
+        Empleado empleado11 = new Empleado("11", "Pablo Mena");
+        Empleado empleado12 = new Empleado("12", "Samuel Fernandez");
+        Empleado empleado13 = new Empleado("13", "Justin Badilla");
+        Empleado empleado14 = new Empleado("14", "Diego Alfaro");
+        Empleado empleado15 = new Empleado("15", "Brayan Blanco");
+        Empleado empleado16 = new Empleado("16", "Pablo Fuentes");
+        Empleado empleado17 = new Empleado("17", "Arlin Badilla");
+        Empleado empleado18 = new Empleado("18", "Nataly Hernandez");
+        Empleado empleado19 = new Empleado("19", "Federico Gonzales");
+        Empleado empleado20 = new Empleado("20", "Maria Lopez");
+        Empleado empleado21 = new Empleado("21", "Steven Gamboa");
+        Empleado empleado22 = new Empleado("22", "Mariangel Lopez");
+        Empleado empleado23 = new Empleado("23", "Darien Gomez");
+        Empleado empleado24 = new Empleado("24", "Franciny Torres");
+        Empleado empleado25 = new Empleado("25", "Santiago Mena");
+        Empleado empleado26 = new Empleado("26", "Gerardo Mena");
+        Empleado empleado27 = new Empleado("27", "Patricia Delgado");
+        Empleado empleado28 = new Empleado("28", "Joseph Gutierrez");
         
         vectorDeEmpleados[0] = empleado1;
         vectorDeEmpleados[1] = empleado2;
         vectorDeEmpleados[2] = empleado3;
         vectorDeEmpleados[3] = empleado4;
         vectorDeEmpleados[4] = empleado5;
+        vectorDeEmpleados[5] = empleado6;
+        vectorDeEmpleados[6] = empleado7;
+        vectorDeEmpleados[7] = empleado8;
+        vectorDeEmpleados[8] = empleado9;
+        vectorDeEmpleados[9] = empleado10;
+        vectorDeEmpleados[10] = empleado11;
+        vectorDeEmpleados[11] = empleado12;
+        vectorDeEmpleados[12] = empleado13;
+        vectorDeEmpleados[13] = empleado14;
+        vectorDeEmpleados[14] = empleado15;
+        vectorDeEmpleados[15] = empleado16;
+        vectorDeEmpleados[16] = empleado17;
+        vectorDeEmpleados[17] = empleado18;
+        vectorDeEmpleados[18] = empleado19;
+        vectorDeEmpleados[19] = empleado20;
+        vectorDeEmpleados[20] = empleado21;
+        vectorDeEmpleados[21] = empleado22;
+        vectorDeEmpleados[22] = empleado23;
+        vectorDeEmpleados[23] = empleado24;
+        vectorDeEmpleados[24] = empleado25;
+        vectorDeEmpleados[25] = empleado26;
+        vectorDeEmpleados[26] = empleado27;
+        vectorDeEmpleados[27] = empleado28;
     }
     
     // Inicializa los componentes visuales
@@ -97,9 +150,17 @@ public class ProyectoFinal extends JFrame {
         // Crear una barra de menu
         JMenuBar menuBar = new JMenuBar();
         
-        // Crear menus
-        JMenu archivoMenu = new JMenu("Opciones");
+        // Establecer la barra de menu en la ventana
+        setJMenuBar(menuBar);
         
+        // Crear las opciones que tendra el menu
+        JMenu archivoMenu = new JMenu("Opciones");
+        JMenu opcionSalir = new JMenu("Salir");
+        
+        // Agregar menus a la barra de menu
+        menuBar.add(archivoMenu);
+        menuBar.add(opcionSalir);
+
         // Crear los items del menu
         JMenuItem menuSalasDeCine = new JMenuItem("Salas de cine");
         JMenuItem menuReservasConElEntrenador = new JMenuItem("Reservas con el entrenador");
@@ -149,6 +210,8 @@ public class ProyectoFinal extends JFrame {
             }
         });
         
+        //rellenar con opcion para salir*
+        
         menuGestionarEmpleados.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -170,11 +233,7 @@ public class ProyectoFinal extends JFrame {
         archivoMenu.add(menuGestionarEmpleados);
         archivoMenu.addSeparator();
         
-        // Agregar menus a la barra de menu
-        menuBar.add(archivoMenu);
         
-        // Establecer la barra de menu en la ventana
-        setJMenuBar(menuBar);
     }
     
     // Determina la cantidad de empleados
@@ -433,6 +492,10 @@ public class ProyectoFinal extends JFrame {
         // Se anaden la tabla y el panelDatosDelEmpleado al jframe
         panelGestionDeEmpleados.add(scrollPane);
         panelGestionDeEmpleados.add(panelDatosDelEmpleado);
+    }
+    
+    public void Salir(){
+        System.exit(0);
     }
     
     // Mueve los empleados en el vector para no dejar espacios nulos entre los empleados
