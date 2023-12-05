@@ -153,11 +153,11 @@ public class ProyectoFinal extends JFrame {
         // Establecer la barra de menu en la ventana
         setJMenuBar(menuBar);
         
-        // Crear las opciones que tendra el menu
+        // Crear las opciones que tendra la barra de menu
         JMenu archivoMenu = new JMenu("Opciones");
         JMenu opcionSalir = new JMenu("Salir");
         
-        // Agregar menus a la barra de menu
+        // Agregar las opciones de menus a la barra de menu
         menuBar.add(archivoMenu);
         menuBar.add(opcionSalir);
 
@@ -166,8 +166,23 @@ public class ProyectoFinal extends JFrame {
         JMenuItem menuReservasConElEntrenador = new JMenuItem("Reservas con el entrenador");
         JMenuItem menuReservasDeClases = new JMenuItem("Reservas de clases");
         JMenuItem menuGestionarEmpleados = new JMenuItem("Gestionar empleados");
+        JMenuItem menuSalir = new JMenuItem("Salir");
         
         // Se agregan los eventos a los menus
+        menuSalir.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                // Accion a realizar cuando se hace clic
+                panelSalasDeCine.setVisible(false);
+                panelReservasConElEntrenador.setVisible(false);
+                panelReservasDeClases.setVisible(false);
+                panelGestionDeEmpleados.setVisible(false);
+                
+                // Invoca la opcion para salir
+                Salir();
+            }
+        });
+        
         menuSalasDeCine.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -233,9 +248,14 @@ public class ProyectoFinal extends JFrame {
         archivoMenu.add(menuGestionarEmpleados);
         archivoMenu.addSeparator();
         
+        opcionSalir.add(menuSalir);
         
     }
     
+    //Salir
+    public void Salir(){
+        System.exit(0);
+    }
     // Determina la cantidad de empleados
     public int cantidadDeEmpleados() {
         int cantidadDeEmpleados = 0;
@@ -494,9 +514,6 @@ public class ProyectoFinal extends JFrame {
         panelGestionDeEmpleados.add(panelDatosDelEmpleado);
     }
     
-    public void Salir(){
-        System.exit(0);
-    }
     
     // Mueve los empleados en el vector para no dejar espacios nulos entre los empleados
     public void eliminarEmpleado(int posicionEmpleadoSeleccionado) {
