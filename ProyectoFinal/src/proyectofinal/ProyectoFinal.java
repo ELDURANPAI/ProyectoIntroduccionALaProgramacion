@@ -91,7 +91,15 @@ public class ProyectoFinal extends JFrame {
         Empleado empleado26 = new Empleado("26", "Gerardo Mena");
         Empleado empleado27 = new Empleado("27", "Patricia Delgado");
         Empleado empleado28 = new Empleado("28", "Joseph Gutierrez");
-        
+        Empleado empleado29 = new Empleado("28", "Esteban Picado");
+        Empleado empleado30 = new Empleado("29", "Byron Zumbado");
+        Empleado empleado31 = new Empleado("30", "Jose Santos");
+        Empleado empleado32 = new Empleado("31", "Eugenia Aguilar");
+        Empleado empleado33 = new Empleado("32", "Gregorio Villalobos");
+        Empleado empleado34 = new Empleado("33", "Bryan Solis");
+        Empleado empleado35 = new Empleado("34", "Andrey Bolaños");
+        Empleado empleado36 = new Empleado("35", "Kattia Varela");
+       
         vectorDeEmpleados[0] = empleado1;
         vectorDeEmpleados[1] = empleado2;
         vectorDeEmpleados[2] = empleado3;
@@ -120,6 +128,14 @@ public class ProyectoFinal extends JFrame {
         vectorDeEmpleados[25] = empleado26;
         vectorDeEmpleados[26] = empleado27;
         vectorDeEmpleados[27] = empleado28;
+        vectorDeEmpleados[28] = empleado29;
+        vectorDeEmpleados[29] = empleado30;
+        vectorDeEmpleados[30] = empleado31;
+        vectorDeEmpleados[31] = empleado32;
+        vectorDeEmpleados[32] = empleado33;
+        vectorDeEmpleados[33] = empleado34;
+        vectorDeEmpleados[34] = empleado35;
+        vectorDeEmpleados[35] = empleado36;
     }
     
     // Inicializa los componentes visuales
@@ -419,7 +435,38 @@ public class ProyectoFinal extends JFrame {
     
     //panel para las clases de baile y yoga
     public void panelReservasDeClases() {
+        //Limpiar el panel
+        panelReservasDeClases.removeAll();
         
+        //Crear botones
+        JButton ClaseBaile = new JButton("Clases de baile");
+        JButton ClaseYoga = new JButton("Clases de yoga");
+        
+        //programar boton de Gimnasio1
+        ClaseBaile.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                //llamar la clase "Baile"
+                Baile baile = new Baile();
+                //Llamar metodo "Baile"
+                baile.Baile();
+            }
+        });
+        
+        //programar boton de clases de yoga
+        ClaseYoga.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                //llamar la clase "yoga"
+                yoga yoga = new yoga();
+                //Llamar metodo "yoga"
+                yoga.yoga();
+            }
+        });
+        
+        //Agregar botones al panel
+        panelReservasDeClases.add(ClaseBaile);
+        panelReservasDeClases.add(ClaseYoga);
     }
     
     // Este es el panelGestionDeEmpleados con la funcionalidad de los componentes
