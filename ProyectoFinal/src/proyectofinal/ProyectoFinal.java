@@ -225,7 +225,6 @@ public class ProyectoFinal extends JFrame {
             }
         });
         
-        //rellenar con opcion para salir*
         
         menuGestionarEmpleados.addActionListener(new ActionListener() {
             @Override
@@ -248,6 +247,7 @@ public class ProyectoFinal extends JFrame {
         archivoMenu.add(menuGestionarEmpleados);
         archivoMenu.addSeparator();
         
+        //  Agregar item al menu "Salir"
         opcionSalir.add(menuSalir);
         
     }
@@ -256,6 +256,7 @@ public class ProyectoFinal extends JFrame {
     public void Salir(){
         System.exit(0);
     }
+    
     // Determina la cantidad de empleados
     public int cantidadDeEmpleados() {
         int cantidadDeEmpleados = 0;
@@ -273,7 +274,55 @@ public class ProyectoFinal extends JFrame {
     }
     
     public void panelSalasDeCine() {
+        // Elimina todos los componentes del panel
+        panelSalasDeCine.removeAll();
         
+        
+        //Crear botones
+        JButton CineProgramable = new JButton("Cine Programable");
+        JButton Cine2 = new JButton("Sala de Cine 2");
+        JButton Cine3 = new JButton("Sala de Cine 3");
+
+        //programar boton de cine programable
+        CineProgramable.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                //llamar la clase "CineProgramada"
+                CineProgramada cine = new CineProgramada();
+                //Llamar metodo "cine"
+                cine.Cine();
+            }
+        });
+        
+        //programar boton de cine2
+        Cine2.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                //llamar la clase "CineProgramada"
+                Cine2 cine = new Cine2();
+                //Llamar metodo "cine"
+                cine.Cine2();
+            }
+        });
+        
+        //programar boton de cine3
+        Cine3.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                //llamar la clase "CineProgramada"
+                Cine3 cine = new Cine3();
+                //Llamar metodo "cine"
+                cine.Cine3();
+            }
+        });
+        
+        //Agregar boton a la sala
+        panelSalasDeCine.add(CineProgramable);
+        panelSalasDeCine.add(Cine2);
+        panelSalasDeCine.add(Cine3);
+        
+        
+   
     }
     
     public void panelReservasConElEntrenador() {
