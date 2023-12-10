@@ -273,6 +273,7 @@ public class ProyectoFinal extends JFrame {
         return cantidadDeEmpleados;
     }
     
+    //panel para el cine
     public void panelSalasDeCine() {
         // Elimina todos los componentes del panel
         panelSalasDeCine.removeAll();
@@ -325,10 +326,98 @@ public class ProyectoFinal extends JFrame {
    
     }
     
+    //panel del gimnasio
     public void panelReservasConElEntrenador() {
+        //Limpiar el panel
+        panelReservasConElEntrenador.removeAll();
+
+        //Crear botones
+        JButton Gimnasio1 = new JButton("2:00 P.M");
+        JButton Gimnasio2 = new JButton("3:00 P.M");
+        JButton Gimnasio3 = new JButton("4:00 P.M");
+        JButton Gimnasio4 = new JButton("5:00 P.M");
+        JButton Gimnasio5 = new JButton("6:00 P.M");
+        JButton Gimnasio6 = new JButton("7:00 P.M");
+        
+        //programar boton de Gimnasio1
+        Gimnasio1.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                //llamar la clase "CineProgramada"
+                Gimnasio2pm gym = new Gimnasio2pm();
+                //Llamar metodo "cine"
+                gym.Gimnasio2pm();
+            }
+        });
+        
+        //programar boton de Gimnasio2
+        Gimnasio2.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                //llamar la clase "CineProgramada"
+                Gimnasio3pm gym = new Gimnasio3pm();
+                //Llamar metodo "cine"
+                gym.Gimnasio3pm();
+            }
+        });
+        
+        //programar boton de Gimnasio3
+        Gimnasio3.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                //llamar la clase "CineProgramada"
+                Gimnasio4pm gym = new Gimnasio4pm();
+                //Llamar metodo "cine"
+                gym.Gimnasio4pm();
+            }
+        });
+        
+        //programar boton de Gimnasio4
+        Gimnasio4.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                //llamar la clase "CineProgramada"
+                Gimnasio5pm gym = new Gimnasio5pm();
+                //Llamar metodo "cine"
+                gym.Gimnasio5pm();
+            }
+        });
+        
+        //programar boton de Gimnasio5
+        Gimnasio5.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                //llamar la clase "CineProgramada"
+                Gimnasio6pm gym = new Gimnasio6pm();
+                //Llamar metodo "cine"
+                gym.Gimnasio6pm();
+            }
+        });
+        
+        //programar boton de Gimnasio6
+        Gimnasio6.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                //llamar la clase "CineProgramada"
+                Gimnasio7pm gym = new Gimnasio7pm();
+                //Llamar metodo "cine"
+                gym.Gimnasio7pm();
+            }
+        });
+
+        
+        //Agregar botones al panel
+        panelReservasConElEntrenador.add(Gimnasio1);
+        panelReservasConElEntrenador.add(Gimnasio2);
+        panelReservasConElEntrenador.add(Gimnasio3);
+        panelReservasConElEntrenador.add(Gimnasio4);
+        panelReservasConElEntrenador.add(Gimnasio5);
+        panelReservasConElEntrenador.add(Gimnasio6);
+        
         
     }
     
+    //panel para las clases de baile y yoga
     public void panelReservasDeClases() {
         
     }
